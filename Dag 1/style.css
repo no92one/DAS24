@@ -1,0 +1,22 @@
+h1 {
+    color: blue;
+}
+
+div {
+    display: flex;
+}
+
+p {
+    padding: 10px;
+    background-color: lightgray;
+    border: solid 5px black;
+    margin: 5px;
+}
+
+#first_name {
+    color: green;
+}
+
+#last_name {
+    color: red;
+}
