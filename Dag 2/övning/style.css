@@ -1,0 +1,44 @@
+h1 {
+    color: red;
+}
+
+p {
+    color: blue;
+}
+
+#p1 {
+    color: rgb(84, 254, 84);
+}
+
+#p2 {
+    color: rgb(0, 190, 0);
+}
+
+#p3 {
+    color: rgb(163, 255, 163)
+}
+
+.li1 {
+    color: palegoldenrod;
+}
+
+.li2 {
+    color: paleturquoise;
+}
+
+.li3 {
+    color: palevioletred;
+}
+
+.li4 {
+    color: pink;
+}
+
+.li5 {
+    color: purple;
+}
+
+.li6 {
+    color: lavender;
+}
+
