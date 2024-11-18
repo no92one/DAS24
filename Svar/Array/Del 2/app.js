@@ -8,7 +8,7 @@ while (running) {
         "\n2. Lägg till något i listan" +
         "\n3. Ta bort en sak överst i listan" +
         "\n4. Ta bort en sak längst ner i listan" +
-        "\n5. Avsluta programmet" +
+        "\n5. Ta bort en sak baserat på index" +
         "\n6. Ta bort en sak baserat på namn" +
         "\n7. Skriv ut har-gjort-listan" +
         "\n8. Flytta en sak till toppen av att-göra-listan" +
@@ -53,6 +53,17 @@ while (running) {
             console.log(`"${removedTodo}" togs bort från botten av listan.`)
         } else {
             console.log("Listan är redan tom.")
+        }
+
+    } else if (choice == "5") {
+        let index = parseInt(prompt("Ange index (1-baserat) för saken som ska tas bort:")) - 1
+
+        if (index >= 0 && index < todoList.length) {
+            let removedItem = todoList.splice(index, 1)[0]
+            doneList.push(removedItem)
+            console.log(`"${removedItem}" togs bort från listan.`)
+        } else {
+            console.log("Ogiltigt index.");
         }
 
     } else if (choice == "6") {
