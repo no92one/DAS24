@@ -1,4 +1,3 @@
-let input = document.getElementsByName("firstname")
 let personList = []
 
 // console.log(input)
@@ -14,14 +13,30 @@ formButton.addEventListener("click", () => {
     // console.log(formData.email.value)
     // console.log(formData.age.value)
 
-    let newPerson = {
-        firstname: formData.firstname.value,
-        lastname: formData.lastname.value,
-        email: formData.email.value,
-        age: formData.age.value
+    if (formData.firstname.value.trim().length >= 1
+        && formData.lastname.value.trim().length >= 1
+        && formData.email.value.trim().length >= 5
+        && formData.email.value.trim().includes("@")
+        && formData.email.value.trim().includes(".")
+        && formData.age.value >= 18) {
+        let newPerson = {
+            firstname: formData.firstname.value,
+            lastname: formData.lastname.value,
+            email: formData.email.value,
+            age: formData.age.value
+        }
+
+        formData.firstname.value = ""
+        formData.lastname.value = ""
+        formData.email.value = ""
+        formData.age.value = ""
+
+        personList.push(newPerson)
+    } else {
+        alert("firstname och lastname måste innehålla minst 1 karaktär!")
     }
 
-    personList.push(newPerson)
+
 })
 
 
