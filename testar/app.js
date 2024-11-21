@@ -13,5 +13,6 @@ button.addEventListener("click", () => {
             formData[input.name] = input.value;
         }
     }
+    
     console.log("Formulärdata:", formData);
 });
