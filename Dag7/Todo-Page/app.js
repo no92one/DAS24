@@ -15,12 +15,28 @@ let textInput = document.getElementById("todoInput")
 let todoButton = document.getElementById("addTodoButton")
 let todoList = document.getElementById("todoList")
 
-console.dir(textInput)
+todoButton.addEventListener("click", addTodo)
 
-todoButton.addEventListener("click", () => {
+// console.dir(textInput)
+textInput.addEventListener("keypress", (event) => {
+    // console.log(event)
+    if (event.key == "Enter") {
+        addTodo()
+    }
+})
+
+
+function addTodo() {
+    // console.log("addTodo triggered");
     // console.log(textInput.value)
+    if (textInput.value.trim() === "") {
+        alert("Skriv en en todo!")
+        textInput.value = "" // Tömmer textInput
+        return
+    }
 
     let newTodo = document.createElement("li") // Skapar ett li-element.
+    newTodo.classList.add("todoItem")
     // console.log(newTodoItem)
     // console.dir(newTodo)
 
@@ -29,6 +45,7 @@ todoButton.addEventListener("click", () => {
 
     let todoRemoveBtn = document.createElement("button")
     todoRemoveBtn.textContent = "x"
+    todoRemoveBtn.classList.add("removeBtn")
     todoRemoveBtn.addEventListener("click", () => {
         todoList.removeChild(newTodo)
     })
@@ -47,4 +64,6 @@ todoButton.addEventListener("click", () => {
     // console.log(newTodo)
 
     todoList.appendChild(newTodo)
-})
+
+    textInput.value = "" // Tömmer textInput
+}

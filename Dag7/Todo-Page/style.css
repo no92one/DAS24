@@ -1,3 +1,25 @@
+.todoList {
+    margin-top: 20px;
+}
+
+.todoItem {
+    display: flex;
+    gap: 5px;
+    margin: 5px 0;
+}
+
+.removeBtn {
+    background-color: red;
+    color: white;
+    border: solid black 2px;
+    padding: 0 4px;
+    cursor: pointer;
+}
+
+.removeBtn:hover {
+    background-color: darkred;
+}
+
 .todoDone {
     text-decoration: line-through;
     color: gray;
